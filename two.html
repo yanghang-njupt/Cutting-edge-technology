@@ -5,11 +5,184 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
   <title>前沿</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      outline: none;
+      box-sizing: border-box;
+      height: 100vh;
+      background-image: linear-gradient(-225deg, #080b19 0%, #334b8d 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px 80px;
+    }
+
+    .topHeader {
+      height: 7vh;
+      width: 100vw;
+      z-index: 100;
+      background-color: rgba(33, 33, 33, 0.464);
+      letter-spacing: 10px;
+      display: flex;
+      flex-direction: row;
+      color: white;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      align-items: center;
+      justify-content: space-around;
+      font-size: 2.5vh;
+      font-weight: 800;
+    }
+
+    .title-text {
+      opacity: 1;
+    }
+
+    .item {
+      background: rgba(3, 3, 3, 0.231);
+      color: #fff;
+      height: auto;
+      border-radius: 20px;
+    }
+
+    .item-one {
+      background: url("./img/back-img1.jpg") no-repeat fixed center;
+      background-size: 85vw auto;
+      border-radius: 20px;
+      margin: 5vh auto;
+      width: 80vw;
+    }
+
+    .item-two {
+      background: url("./img/back-img2.jpg") no-repeat fixed center;
+      background-size: 85vw auto;
+      border-radius: 20px;
+      margin: 5vh auto;
+      width: 80vw;
+    }
+
+    .item-three {
+      background: url("./img/back-img5.jpg") no-repeat fixed center;
+      background-size: 85vw auto;
+      border-radius: 20px;
+      margin: 5vh auto;
+      width: 80vw;
+    }
+
+    .bigBox {
+      height: 100vh;
+      width: 100vw;
+      padding: auto;
+      overflow: scroll;
+      overflow-x: hidden;
+    }
+
+    .bigBox::-webkit-scrollbar {
+      /*滚动条整体样式*/
+      width: 0;
+      /*高宽分别对应横竖滚动条的尺寸*/
+      height: 0;
+    }
+
+    .bigBox::-webkit-scrollbar-thumb {
+      /*滚动条里面小方块*/
+      border-radius: 10px;
+      /* -webkit-box-shadow: inset 0 0 5px rgba(126, 126, 126, 0.2); */
+      background: #a8a7a7;
+    }
+
+    .bigBox::-webkit-scrollbar-track {
+      /*滚动条里面轨道*/
+      /* -webkit-box-shadow: inset 0 0 5px rgba(193, 193, 193, 0.2); */
+      border-radius: 10px;
+      background: #ededed;
+    }
+
+    .text {
+      font-size: 18px;
+    }
+  </style>
 </head>
 
 <body>
-  <h1>前沿</h1>
+  <div class="topHeader">
+    <span id="one" class="span" style="margin-left: 9vw;">简述</span>
+    <span id="two" class="span" style="color: rgb(85, 108, 192);">前沿</span>
+    <span id="three" class="span">未来</span>
+    <span id="four" class="span">日常</span>
+    <span id="five" class="span">游戏</span>
+    <span id="six" class="span" style="margin-right: 9vw;">更多</span>
+  </div>
+  <div class="bigBox">
+    <section class="item-one">
+      <div class="item">
+        <h2 style="font-size: 40px;margin-bottom: 0;">科技改变生活</h2>
+        <div class="content">
+          <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;2021年学术圈发生了几件大事。7月，谷歌旗下DeepMind在Nature上开源了利用AI对蛋白质结构进行预测的AlphaFold
+            2，随后发布了来自人类和20种其他生物共350000种蛋白质结构的预测结果。12月，DeepMind首次利用AI帮助数学家提出了两个全新的数学猜想，登上Nature封面。</p>
+          <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;2021年学术圈发生了几件大事。7月，谷歌旗下DeepMind在Nature上开源了利用AI对蛋白质结构进行预测的AlphaFold
+            2，随后发布了来自人类和20种其他生物共350000种蛋白质结构的预测结果。12月，DeepMind首次利用AI帮助数学家提出了两个全新的数学猜想，登上Nature封面。</p>
+          <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;2021年学术圈发生了几件大事。7月，谷歌旗下DeepMind在Nature上开源了利用AI对蛋白质结构进行预测的AlphaFold
+            2，随后发布了来自人类和20种其他生物共350000种蛋白质结构的预测结果。12月，DeepMind首次利用AI帮助数学家提出了两个全新的数学猜想，登上Nature封面。</p>
+          <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;2021年学术圈发生了几件大事。7月，谷歌旗下DeepMind在Nature上开源了利用AI对蛋白质结构进行预测的AlphaFold
+            2，随后发布了来自人类和20种其他生物共350000种蛋白质结构的预测结果。12月，DeepMind首次利用AI帮助数学家提出了两个全新的数学猜想，登上Nature封面。</p>
+          <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;2021年学术圈发生了几件大事。7月，谷歌旗下DeepMind在Nature上开源了利用AI对蛋白质结构进行预测的AlphaFold
+            2，随后发布了来自人类和20种其他生物共350000种蛋白质结构的预测结果。12月，DeepMind首次利用AI帮助数学家提出了两个全新的数学猜想，登上Nature封面。</p>
+        </div>
+      </div>
+
+    </section>
+    <section class="item-two">
+      <div class="item">
+        <h2 style="font-size: 40px;margin-bottom: 0;">科技改变生活</h2>
+        <div class="content">
+          <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;2021年学术圈发生了几件大事。7月，谷歌旗下DeepMind在Nature上开源了利用AI对蛋白质结构进行预测的AlphaFold
+            2，随后发布了来自人类和20种其他生物共350000种蛋白质结构的预测结果。12月，DeepMind首次利用AI帮助数学家提出了两个全新的数学猜想，登上Nature封面。</p>
+          <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;2021年学术圈发生了几件大事。7月，谷歌旗下DeepMind在Nature上开源了利用AI对蛋白质结构进行预测的AlphaFold
+            2，随后发布了来自人类和20种其他生物共350000种蛋白质结构的预测结果。12月，DeepMind首次利用AI帮助数学家提出了两个全新的数学猜想，登上Nature封面。</p>
+          <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;2021年学术圈发生了几件大事。7月，谷歌旗下DeepMind在Nature上开源了利用AI对蛋白质结构进行预测的AlphaFold
+            2，随后发布了来自人类和20种其他生物共350000种蛋白质结构的预测结果。12月，DeepMind首次利用AI帮助数学家提出了两个全新的数学猜想，登上Nature封面。</p>
+          <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;2021年学术圈发生了几件大事。7月，谷歌旗下DeepMind在Nature上开源了利用AI对蛋白质结构进行预测的AlphaFold
+            2，随后发布了来自人类和20种其他生物共350000种蛋白质结构的预测结果。12月，DeepMind首次利用AI帮助数学家提出了两个全新的数学猜想，登上Nature封面。</p>
+          <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;2021年学术圈发生了几件大事。7月，谷歌旗下DeepMind在Nature上开源了利用AI对蛋白质结构进行预测的AlphaFold
+            2，随后发布了来自人类和20种其他生物共350000种蛋白质结构的预测结果。12月，DeepMind首次利用AI帮助数学家提出了两个全新的数学猜想，登上Nature封面。</p>
+        </div>
+      </div>
+
+    </section>
+    <section class="item-three">
+      <div class="item">
+        <h2 style="font-size: 40px;margin-bottom: 0;">科技改变生活</h2>
+        <div class="content">
+          <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;2021年学术圈发生了几件大事。7月，谷歌旗下DeepMind在Nature上开源了利用AI对蛋白质结构进行预测的AlphaFold
+            2，随后发布了来自人类和20种其他生物共350000种蛋白质结构的预测结果。12月，DeepMind首次利用AI帮助数学家提出了两个全新的数学猜想，登上Nature封面。</p>
+          <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;2021年学术圈发生了几件大事。7月，谷歌旗下DeepMind在Nature上开源了利用AI对蛋白质结构进行预测的AlphaFold
+            2，随后发布了来自人类和20种其他生物共350000种蛋白质结构的预测结果。12月，DeepMind首次利用AI帮助数学家提出了两个全新的数学猜想，登上Nature封面。</p>
+          <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;2021年学术圈发生了几件大事。7月，谷歌旗下DeepMind在Nature上开源了利用AI对蛋白质结构进行预测的AlphaFold
+            2，随后发布了来自人类和20种其他生物共350000种蛋白质结构的预测结果。12月，DeepMind首次利用AI帮助数学家提出了两个全新的数学猜想，登上Nature封面。</p>
+          <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;2021年学术圈发生了几件大事。7月，谷歌旗下DeepMind在Nature上开源了利用AI对蛋白质结构进行预测的AlphaFold
+            2，随后发布了来自人类和20种其他生物共350000种蛋白质结构的预测结果。12月，DeepMind首次利用AI帮助数学家提出了两个全新的数学猜想，登上Nature封面。</p>
+          <p class="text">&nbsp;&nbsp;&nbsp;&nbsp;2021年学术圈发生了几件大事。7月，谷歌旗下DeepMind在Nature上开源了利用AI对蛋白质结构进行预测的AlphaFold
+            2，随后发布了来自人类和20种其他生物共350000种蛋白质结构的预测结果。12月，DeepMind首次利用AI帮助数学家提出了两个全新的数学猜想，登上Nature封面。</p>
+        </div>
+      </div>
+    </section>
+    <script>
+      $(".span").click((e) => {
+        location.href = "./" + e.currentTarget.id + ".html"
+      })
+    </script>
 </body>
 
 </html>

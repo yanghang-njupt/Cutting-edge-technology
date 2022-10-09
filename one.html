@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>简述</title>
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
 </head>
 <style>
   body {
@@ -29,22 +30,22 @@
     padding: 0px 80px;
   }
 
-  .title {
-    height: 5vh;
+  .topHeader {
+    height: 7vh;
     width: 100vw;
     z-index: 100;
     background-color: rgba(33, 33, 33, 0.464);
     letter-spacing: 10px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     align-items: center;
-    justify-content: center;
-    font-size: 3.5vh;
+    justify-content: space-around;
+    font-size: 2.5vh;
     font-weight: 800;
-    padding: 8px 0;
   }
+
 
   .title-text {
     opacity: 1;
@@ -116,8 +117,13 @@
 </style>
 
 <body>
-  <div class="title">
-    <span class="title-text">科技创意丰富美好生活</span>
+  <div class="topHeader">
+    <span id="one" class="span" style="color: rgb(85, 108, 192);margin-left: 9vw;">简述</span>
+    <span id="two" class="span">前沿</span>
+    <span id="three" class="span">未来</span>
+    <span id="four" class="span">日常</span>
+    <span id="five" class="span">游戏</span>
+    <span id="six" class="span" style="margin-right: 9vw;">更多</span>
   </div>
   <div class="bigBox">
     <section class="item-one">
@@ -173,6 +179,11 @@
         </div>
       </div>
     </section>
+    <script>
+      $(".span").click((e) => {
+        location.href = "./" + e.currentTarget.id + ".html"
+      })
+    </script>
 </body>
 
 </html>
