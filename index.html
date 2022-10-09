@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>科技创意丰富美好生活</title>
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<style>
+  body {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    outline: none;
+    box-sizing: border-box;
+    height: 100vh;
+    background-image: linear-gradient(-225deg, #080b19 0%, #334b8d 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .body {
+    width: 100%;
+    height: 100%;
+  }
+
+  .bigBox {
+    position: absolute;
+    top: 12%;
+    left: 10%;
+    right: 10%;
+    bottom: 20%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('./img/back-img4.jpg'), #151729;
+    background-size: 90vw;
+    box-shadow: 4px 4px 40px rgb(26, 25, 25);
+    object-fit: contain;
+    background-repeat: no-repeat;
+  }
+
+  .bord {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    /* background: rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5); */
+  }
+
+  .title {
+    height: 8vh;
+    width: 100vw;
+    z-index: 100;
+    background-color: rgba(33, 33, 33, 0.464);
+    letter-spacing: 10px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5vh;
+    font-weight: 800;
+    padding: 8px 0;
+  }
+
+  .title-text {
+    opacity: 1;
+  }
+
+  .item {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+  }
+
+  .item h2 {
+    padding-left: 7px;
+  }
+
+  .item .content {
+    transform: translateY(0px);
+    transition: 0.5s;
+  }
+
+  .item:hover .content {
+    transform: translateY(-100px);
+    opacity: 1;
+  }
+
+  .item p {
+    margin-top: 75px;
+  }
+
+  .body-list {
+    position: absolute;
+    bottom: 8%;
+    margin: 0 25%;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  li {
+    width: 9vh;
+    height: 9vh;
+    border-radius: 50%;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  #img1 {
+    transition: 0.5s;
+  }
+</style>
+
+<body>
+  <div class="title">
+    <span class="title-text">科技创意丰富美好生活</span>
+  </div>
+  <div class="body">
+    <div class="bigBox">
+      <div class="bord"></div>
+    </div>
+    <div class="body-list">
+      <li class="one item">
+        <div class="content">
+          <h2>1</h2>
+          <p>简述</p>
+        </div>
+      </li>
+      <li class="two item">
+        <div class="content">
+          <h2>2</h2>
+          <p>前沿</p>
+        </div>
+      </li>
+      <li class="three item">
+        <div class="content">
+          <h2>3</h2>
+          <p>未来</p>
+        </div>
+      </li>
+      <li class="four item">
+        <div class="content">
+          <h2>4</h2>
+          <p>日常</p>
+        </div>
+      </li>
+      <li class="five item">
+        <div class="content">
+          <h2>5</h2>
+          <p>游戏</p>
+        </div>
+      </li>
+      <li class="six item">
+        <div class="content">
+          <h2>6</h2>
+          <p>更多</p>
+        </div>
+        <!-- </li>
+      <li class="seven item">
+        <div class="content">
+          <h2>7</h2>
+          <p>简介</p>
+        </div>
+      </li>
+      <li class="eight item">
+        <div class="content">
+          <h2>8</h2>
+          <p>简介</p>
+        </div>
+      </li>
+      <li class="nine item">
+        <div class="content">
+          <h2>9</h2>
+          <p>更多</p>
+        </div>
+      </li> -->
+    </div>
+    <div class="canvaszz"> </div>
+    <canvas id="canvas"></canvas>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.2/gsap.min.js"></script>
+  <script>
+
+    // 气泡飘浮动画
+    const animate = gsap.timeline({ defaults: { ease: "slow(0.7, 0.7, false)", yoyo: true } })
+    animate.to(".one", 2, {
+      y: -10,
+      scale: 1.1,
+      yoyo: true,
+      repeat: -1
+    }, .4, '<')
+    animate.from(".two", 2, {
+      y: 10,
+      scale: 1.2,
+      yoyo: true,
+      repeat: -1
+    }, .4, '<')
+    animate.to(".three", 2, {
+      y: -7,
+      scale: 1.1,
+      yoyo: true,
+      repeat: -1
+    }, .4, '<')
+    animate.to(".four", 2, {
+      y: 8,
+      scale: 1.1,
+      yoyo: true,
+      repeat: -1
+    }, .4, '<')
+    animate.from(".five", 2, {
+      y: 5,
+      scale: 1,
+      yoyo: true,
+      repeat: -1
+    }, .4, '<')
+    animate.to(".six", 2, {
+      y: -7,
+      scale: 1.05,
+      yoyo: true,
+      repeat: -1
+    }, .4, '<')
+    animate.to(".seven", 2, {
+      y: 5,
+      scale: 0.9,
+      yoyo: true,
+      repeat: -1
+    }, .4, '<')
+    animate.to(".eight", 2, {
+      y: -8,
+      scale: 1,
+      yoyo: true,
+      repeat: -1
+    }, .4, '<')
+    animate.to(".nine", 2, {
+      y: 7,
+      scale: 1.2,
+      yoyo: true,
+      repeat: -1
+    }, .4, '<')
+
+    // backImg跟随鼠标移动
+    const backImg = document.querySelector('.bigBox');
+    window.onmousemove = function (e) {
+      // 返回被触发时的鼠标X，Y位置
+      let x = e.clientX / 5
+      let y = e.clientY / 5;
+      // 将容器的背景图片定位进行修改
+      backImg.style.backgroundPositionX = -(x / 2) + 'px';
+      backImg.style.backgroundPositionY = -(y / 2) + 'px';
+      // console.log(x, y);
+    }
+
+    // 监听点击事件
+    $(".one").click(function () {
+      window.location.href = "./one.html"
+    });
+    $(".two").click(function () {
+      window.location.href = "./two.html"
+    });
+    $(".three").click(function () {
+      window.location.href = "./three.html"
+    });
+    $(".four").click(function () {
+      window.location.href = "./four.html"
+    });
+    $(".five").click(function () {
+      window.location.href = "./five.html"
+    });
+    $(".six").click(function () {
+      window.location.href = "./six.html"
+    });
+    $(".seven").click(function () {
+      window.location.href = "./seven.html"
+    });
+    $(".eight").click(function () {
+      window.location.href = "./eight.html"
+    });
+    $(".nine").click(function () {
+      window.location.href = "./nine.html"
+    });
+
+    // 点击切换图片
+    const bigBox = document.querySelector('.bigBox')
+    $(".bigBox").click(() => changeImg())
+    // 切换图片函数
+    function changeImg() {
+      let index = Math.floor(Math.random() * 10) + 1;
+      let src = "url('./img/back-img" + index + ".jpg')"
+      if (bigBox.style.backgroundImage == src)
+        changeImg()
+      else
+        bigBox.style.backgroundImage = src
+    }
+
+
+  </script>
+  <script>
+    "use strict";
+    var canvas = document.getElementById('canvas'),
+      ctx = canvas.getContext('2d'),
+      w = canvas.width = window.innerWidth,
+      h = canvas.height = window.innerHeight,
+
+      hue = 217,
+      stars = [],
+      count = 0,
+      maxStars = 2500;//星星数量
+
+    var canvas2 = document.createElement('canvas'),
+      ctx2 = canvas2.getContext('2d');
+    canvas2.width = 100;
+    canvas2.height = 100;
+    var half = canvas2.width / 2,
+      gradient2 = ctx2.createRadialGradient(half, half, 0, half, half, half);
+    gradient2.addColorStop(0.025, '#CCC');
+    gradient2.addColorStop(0.1, 'hsl(' + hue + ', 61%, 33%)');
+    gradient2.addColorStop(0.25, 'hsl(' + hue + ', 64%, 6%)');
+    gradient2.addColorStop(1, 'transparent');
+
+    ctx2.fillStyle = gradient2;
+    ctx2.beginPath();
+    ctx2.arc(half, half, half, 0, Math.PI * 2);
+    ctx2.fill();
+
+    // End cache
+
+    function random(min, max) {
+      if (arguments.length < 2) {
+        max = min;
+        min = 0;
+      }
+
+      if (min > max) {
+        var hold = max;
+        max = min;
+        min = hold;
+      }
+
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function maxOrbit(x, y) {
+      var max = Math.max(x, y),
+        diameter = Math.round(Math.sqrt(max * max + max * max));
+      return diameter / 2;
+      //星星移动范围，值越大范围越小，
+    }
+
+    var Star = function () {
+
+      this.orbitRadius = random(maxOrbit(w, h));
+      this.radius = random(60, this.orbitRadius) / 18;
+      //星星大小
+      this.orbitX = w / 2;
+      this.orbitY = h / 2;
+      this.timePassed = random(0, maxStars);
+      this.speed = random(this.orbitRadius) / 500000;
+      //星星移动速度
+      this.alpha = random(2, 10) / 10;
+
+      count++;
+      stars[count] = this;
+    }
+
+    Star.prototype.draw = function () {
+      var x = Math.sin(this.timePassed) * this.orbitRadius + this.orbitX,
+        y = Math.cos(this.timePassed) * this.orbitRadius + this.orbitY,
+        twinkle = random(10);
+
+      if (twinkle === 1 && this.alpha > 0) {
+        this.alpha -= 0.05;
+      } else if (twinkle === 2 && this.alpha < 1) {
+        this.alpha += 0.05;
+      }
+
+      ctx.globalAlpha = this.alpha;
+      ctx.drawImage(canvas2, x - this.radius / 2, y - this.radius / 2, this.radius, this.radius);
+      this.timePassed += this.speed;
+    }
+
+    for (var i = 0; i < maxStars; i++) {
+      new Star();
+    }
+
+    function animation() {
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.globalAlpha = 0.5; //尾巴
+      ctx.fillStyle = 'hsla(' + hue + ', 64%, 6%, 2)';
+      ctx.fillRect(0, 0, w, h)
+
+      ctx.globalCompositeOperation = 'lighter';
+      for (var i = 1, l = stars.length; i < l; i++) {
+        stars[i].draw();
+      };
+
+      window.requestAnimationFrame(animation);
+    }
+
+    animation();
+  </script>
+</body>
+
+</html>
